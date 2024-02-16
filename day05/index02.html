@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Cards</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .column {
+        float: left;
+        width: 24%;
+        padding: 10px;
+        margin:3px ;
+        color: #fff;
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .column:first-child {
+        background-color: aqua;
+      }
+
+      .column:nth-child(2) {
+        background-color: violet;
+      }
+
+      .column:nth-child(3) {
+        background-color: yellowgreen;
+      }
+      .column:last-child {
+        background-color: green;
+      }
+
+      @media screen and (max-width: 1000px) and (min-width: 700px) {
+        .column {
+          width: 48%;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Mixed Column Layout</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsa
+        tempora cum, hic, nesciunt non consectetur iure earum et, quo expedita
+        consequatur ratione quam alias!
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <h1>Column 1</h1>
+        <p>Some text..</p>
+      </div>
+      <div class="column">
+        <h1>Column 2</h1>
+        <p>Some text..</p>
+      </div>
+      <div class="column">
+        <h1>Column 3</h1>
+        <p>Some text..</p>
+      </div>
+      <div class="column">
+        <h1>Column 4</h1>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </body>
+</html>
