@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar tab</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 0;
+        height: 100%;
+        margin: 0;
+        font-family: sans-serif, Arial, Helvetica, sans-serif;
+      }
+
+      .tablink {
+        background-color: #555;
+        color: #fff;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+
+      .tablink:hover {
+        background-color: #777;
+      }
+
+      #home {
+        background-color: green;
+      }
+
+      #news {
+        background-color: royalblue;
+      }
+
+      #about {
+        background-color: violet;
+      }
+
+      #contact {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tablink" onclick="onePage('home', this,'green')">Home</button>
+    <button class="tablink" onclick="onePage('news', this,'royalblue')">News</button>
+    <button class="tablink" id="defaultOpen" onclick="onePage('about', this,'violet')">About</button>
+    <button class="tablink" onclick="onePage('contact', this,'yellow')">Contact</button>
+
+    <div id="home" class="tabcontent">
+      <h1>Home</h1>
+      <p>This is home section!</p>
+    </div>
+
+    <div id="news" class="tabcontent">
+      <h1>News</h1>
+      <p>This is News section!</p>
+    </div>
+
+    <div id="about" class="tabcontent">
+      <h1>About</h1>
+      <p>This is about section!</p>
+    </div>
+
+    <div id="contact" class="tabcontent">
+      <h1>Contact</h1>
+      <p>This is contact section!</p>
+    </div>
+
+
+  <script>
+    function onePage(pageName, element, color){
+      let i, tabcontent, tablinks;
+      tabcontent=document.getElementsByClassName("tabcontent");
+      for(i=0; i<tabcontent.length; i++){
+        tabcontent[i].style.display='none';
+      }
+
+      tablinks=document.getElementsByClassName('tablink');
+      for(i=0; i<tablinks.length; i++){
+        tablinks[i].style.backgroundColor="";
+      }
+
+      document.getElementById(pageName).style.display='block';
+      element.style.backgroundColor=color;
+    }
+
+
+    document.getElementById("defaultOpen").click();
+
+  </script>
+
+  </body>
+</html>
